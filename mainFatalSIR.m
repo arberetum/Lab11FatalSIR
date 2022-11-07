@@ -18,8 +18,9 @@ mu_s = 0.00002;
 mu_i = 0.0005;
 mu_r = 0.00004;
 duration = 150;
+dt = 0.1;
 
-[s, i, r, births, deaths_s, deaths_i, deaths_r] = fatalSIR(s0, i0, r0, alpha, beta, gamma, mu_star, mu_s, mu_i, mu_r, duration);
+[s, i, r, births, deaths_s, deaths_i, deaths_r] = fatalSIR(s0, i0, r0, alpha, beta, gamma, mu_star, mu_s, mu_i, mu_r, duration, dt);
 t = 0:0.1:duration-0.1;
 
 figure;
@@ -37,7 +38,7 @@ ylabel("Population Ratio")
 % immunizing case
 gamma = 0;
 
-[s, i, r, births, deaths_s, deaths_i, deaths_r] = fatalSIR(s0, i0, r0, alpha, beta, gamma, mu_star, mu_s, mu_i, mu_r, duration);
+[s, i, r, births, deaths_s, deaths_i, deaths_r] = fatalSIR(s0, i0, r0, alpha, beta, gamma, mu_star, mu_s, mu_i, mu_r, duration, dt);
 
 figure;
 plot(t, s, 'LineWidth', 4)
@@ -55,7 +56,7 @@ ylabel("Population Ratio")
 gamma = 0.04;
 beta = 0.1;
 
-[s, i, r, births, deaths_s, deaths_i, deaths_r] = fatalSIR(s0, i0, r0, alpha, beta, gamma, mu_star, mu_s, mu_i, mu_r, duration);
+[s, i, r, births, deaths_s, deaths_i, deaths_r] = fatalSIR(s0, i0, r0, alpha, beta, gamma, mu_star, mu_s, mu_i, mu_r, duration, dt);
 
 figure;
 plot(t, s, 'LineWidth', 4)
